@@ -44,11 +44,9 @@ jobs:
 #         run: npm run build
       - name: 远程终端
         # You may pin to the exact commit or the version.
-        # uses: invi5H/ssh-action@ece33b57060e562f8d17b6c20b715de95204bbf2
-        uses: invi5H/ssh-action@v1.0.0
+        uses: appleboy/ssh-action@v0.1.7
         with:
           # A unique name for the server
-          NAME: 阿里云
           # The SSH username
           host: 47.122.40.220
           username: root
