@@ -1,0 +1,60 @@
+# This is a basic workflow to help you get started with Actions
+
+name: 自动部署
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # 获取当前长裤的文件信息：Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      # 打印一些信息
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+#       - name: Setup Node.js environment
+#         uses: actions/setup-node@v3.6.0
+#         with:
+#           # Set always-auth in npmrc.
+#           # Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.
+#           node-version: 18.x
+#       - name: 安装依赖
+#         run: npm install
+#       - name: 打包文件
+#         run: npm run build
+      - name: 复制文件到ESC
+      - name: 远程终端
+        # You may pin to the exact commit or the version.
+        # uses: invi5H/ssh-action@ece33b57060e562f8d17b6c20b715de95204bbf2
+        uses: invi5H/ssh-action@v1.0.0
+        with:
+          # A unique name for the server
+          NAME: 阿里云
+          # The SSH username
+          host: 47.122.40.220
+          username: root
+          password: a609413629
+          script: systemctl stop nginx
+      - name: 结束
+      
+      
