@@ -42,7 +42,6 @@ jobs:
 #         run: npm install
 #       - name: 打包文件
 #         run: npm run build
-      - name: 复制文件到ESC
       - name: 远程终端
         # You may pin to the exact commit or the version.
         # uses: invi5H/ssh-action@ece33b57060e562f8d17b6c20b715de95204bbf2
@@ -55,6 +54,5 @@ jobs:
           username: root
           password: a609413629
           script: systemctl stop nginx
-      - name: 结束
       
       
