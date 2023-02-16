@@ -51,7 +51,8 @@ jobs:
           host: 47.122.40.220
           username: root
           password: a609413629
-          script: systemctl start nginx
+          port: 22
+          script: ls
       # - name: 拷贝文件到docker的nginx容器
       
       
