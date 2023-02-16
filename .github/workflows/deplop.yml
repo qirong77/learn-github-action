@@ -43,15 +43,15 @@ jobs:
 #         run: npm install
 #       - name: 打包文件
 #         run: npm run build
-      # - name: 远程终端.
-      #   uses: appleboy/ssh-action@v0.1.7
-      #   with:
-      #     # A unique name for the server
-      #     # The SSH username
-      #     host: 47.122.40.220
-      #     username: root
-      #     password: a609413629
-      #     script: systemctl start nginx
+      - name: 远程终端.
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          # A unique name for the server
+          # The SSH username
+          host: 47.122.40.220
+          username: root
+          password: a609413629
+          script: systemctl start nginx
       # - name: 拷贝文件到docker的nginx容器
       
       
