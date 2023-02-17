@@ -33,26 +33,17 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-#       - name: Setup Node.js environment
-#         uses: actions/setup-node@v3.6.0
-#         with:
-#           # Set always-auth in npmrc.
-#           # Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.
-#           node-version: 18.x
-#       - name: 安装依赖
-#         run: npm install
-#       - name: 打包文件
-#         run: npm run build
-      - name: 远程终端.
-        uses: appleboy/ssh-action@v0.1.7
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.6.0
         with:
-          # A unique name for the server
-          # The SSH username
-          host: 47.122.40.220
-          username: root
-          password: a609413629
-          port: 22
-          script: ls
-      # - name: 拷贝文件到docker的nginx容器
+          # Set always-auth in npmrc.
+          # Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.
+          node-version: 18.x
+      - name: 安装依赖
+        run: npm install
+      - name: 打包文件
+        run: npm run build
+      # - name: 拷贝文件到ESC
+
       
       
