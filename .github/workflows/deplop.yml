@@ -41,14 +41,14 @@ jobs:
       #   run: npm install
       # - name: 打包文件
       #   run: npm run build
-      # - name: 拷贝文件到ESC
-      # uses: easingthemes/ssh-deploy@v4.0.5
-      # with:
-      #   # Private key part of an SSH key pair
-      #   SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY}}
-      #   # Remote host
-      #   REMOTE_HOST: '47.122.40.220'
-      #   # Remote user
-      #   REMOTE_USER: 'root'
-      #   TARGET: '/'
+      - name: 拷贝文件到ESC
+      uses: easingthemes/ssh-deploy@v4.0.5
+      with:
+        # Private key part of an SSH key pair
+        SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY}}
+        # Remote host
+        REMOTE_HOST: '47.122.40.220'
+        # Remote user
+        REMOTE_USER: 'root'
+        TARGET: '/'
         # Remote port
