@@ -43,7 +43,15 @@ jobs:
         run: npm install
       - name: 打包文件
         run: npm run build
-      # - name: 拷贝文件到ESC
+      - name: 拷贝文件到ESC
+        uses: appleboy/scp-action@v0.0.1
+        with:
+          host: 47.122.40.220
+          username: "root"
+          password: "a609413629"
+          port: 22
+          source: "dist/"
+          target: "root/github-action"
 
       
       
