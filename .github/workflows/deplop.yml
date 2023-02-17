@@ -26,8 +26,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
-
-
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
@@ -44,14 +42,20 @@ jobs:
       - name: 打包文件
         run: npm run build
       - name: 拷贝文件到ESC
-       uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        uses: appleboy/scp-action@master
         with:
-          server: 47.122.40.220
-          username: root
-          password: a609413629
+                host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        source: "tests/a.txt,tests/b.txt"
+        target: "test"
+          host: 47.122.40.220
+          username: 'root'
+          password: 'a609413629'
           port: 22
-          source: ./dist/
-          target: root/github-action
+          source: './dist/'
+          target: 'root/github-action'
 
       
       
