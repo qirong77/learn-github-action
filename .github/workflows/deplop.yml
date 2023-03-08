@@ -50,6 +50,6 @@ jobs:
           REMOTE_HOST: '47.122.40.220'
           # Remote user
           REMOTE_USER: 'root'
-          SOURCE: 'note.md'
+          SOURCE: 'dist/'
           TARGET: '/'
           
