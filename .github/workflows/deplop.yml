@@ -52,4 +52,5 @@ jobs:
           REMOTE_USER: 'root'
           SOURCE: "dist/"
           TARGET: '/'
+          EXCLUDE: "/dist/, /node_modules/"
           
