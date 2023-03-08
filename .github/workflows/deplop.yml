@@ -50,7 +50,7 @@ jobs:
           REMOTE_HOST: '47.122.40.220'
           # Remote user
           REMOTE_USER: 'root'
-          SOURCE: "dist/"
+          SOURCE: "page/"
           TARGET: '/'
           EXCLUDE: "/dist/, /node_modules/"
           
