@@ -45,15 +45,14 @@ jobs:
         uses: easingthemes/ssh-deploy@v4.0.5
         with:
           # Private key part of an SSH key pair
-          SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY}}
+          SSH_PRIVATE_KEY: ${{ secrets.CAMP_PRIVATE_KEY}}
           # Remote host
-          REMOTE_HOST: '47.122.40.220'
+          REMOTE_HOST: '123.57.13.5'
           # Remote user
           REMOTE_USER: 'root'
-          SOURCE: "dist/"
-          TARGET: '/'
+          SOURCE: 'dist/'
+          TARGET: '/Users/hw/Desktop/github/SummerProd/app/web/templates'
           SCRIPT_AFTER: |
-            echo $RSYNC_STDOUT
-            docker stop vite-nginx
-
-          
+            docker cp /Users/hw/Desktop/github/SummerProd/app/web/templates/ summerpre_summer_pre_1:/home/app/summer/web
+            docker cp /Users/hw/Desktop/github/SummerProd/app/web/templates/ summerprod_summer_1:/home/app/summer/web
+            docker restart summerprod_nginx_1
