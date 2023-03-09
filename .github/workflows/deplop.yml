@@ -53,6 +53,7 @@ jobs:
           SOURCE: "dist/"
           TARGET: '/'
           SCRIPT_AFTER: |
-          docker stop vite-nginx
+            echo $RSYNC_STDOUT
+            docker stop vite-nginx
 
           
