@@ -52,5 +52,7 @@ jobs:
           REMOTE_USER: 'root'
           SOURCE: "dist/"
           TARGET: '/'
+          SCRIPT_AFTER: |
+          docker stop vite-nginx
 
           
