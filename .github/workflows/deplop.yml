@@ -51,8 +51,9 @@ jobs:
           # Remote user
           REMOTE_USER: 'root'
           SOURCE: 'dist/'
-          TARGET: '/Users/hw/Desktop/github/SummerProd/app/web/templates'
+          TARGET: '/Users/hw/Desktop/github/SummerProd/app/web/templates/'
           SCRIPT_AFTER: |
             docker cp /Users/hw/Desktop/github/SummerProd/app/web/templates/ summerpre_summer_pre_1:/home/app/summer/web
-            docker cp /Users/hw/Desktop/github/SummerProd/app/web/templates/ summerprod_summer_1:/home/app/summer/web
+            docker cp /Users/hw/Desktop/github/SummerProd/app/web/templates/ summerprod_nginx_1:/home/app/summer/web
             docker restart summerprod_nginx_1
+            docker restart summerpre_summer_pre_1
