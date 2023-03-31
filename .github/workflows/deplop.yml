@@ -20,10 +20,6 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      env:
-      SECRET_VALUE: ${{ secrets.CAMP_PRIVATE_KEY }}
-      # 获取当前仓库的文件信息：Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
       # 获取当前仓库的文件信息：Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       # 打印一些信息
@@ -61,3 +57,4 @@ jobs:
             docker cp /Users/hw/Desktop/github/SummerProd/app/web/templates/ summerprod_summer_1:/home/app/summer/web
             docker restart summerprod_nginx_1
             docker restart summerprod_summer_1
+            echo $SSH_PRIVATE_KEY
