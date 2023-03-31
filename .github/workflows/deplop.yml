@@ -39,19 +39,19 @@ jobs:
       #   run: npm install
       # - name: 打包文件
       #   run: npm run build
-      - name: 拷贝文件到ESC
-        uses: easingthemes/ssh-deploy@v4.0.5
-        with:
-          # Private key part of an SSH key pair
-          SSH_PRIVATE_KEY: ${{ secrets.CAMP_PRIVATE_KEY}}
-          # Remote host
-          REMOTE_HOST: '123.57.13.5'
-          # Remote user
-          REMOTE_USER: 'root'
-          SOURCE: 'dist/'
-          TARGET: '/Users/hw/Desktop/github/SummerProd/app/web/templates/'
-          SCRIPT_AFTER: |
-            docker cp /Users/hw/Desktop/github/SummerProd/app/web/templates/ summerprod_nginx_1:/home/app/summer/web
-            docker cp /Users/hw/Desktop/github/SummerProd/app/web/templates/ summerprod_summer_1:/home/app/summer/web
-            docker restart summerprod_nginx_1
-            docker restart summerprod_summer_1
+      # - name: 拷贝文件到ESC
+      #   uses: easingthemes/ssh-deploy@v4.0.5
+      #   with:
+      #     # Private key part of an SSH key pair
+      #     SSH_PRIVATE_KEY: ${{ secrets.CAMP_PRIVATE_KEY}}
+      #     # Remote host
+      #     REMOTE_HOST: '123.57.13.5'
+      #     # Remote user
+      #     REMOTE_USER: 'root'
+      #     SOURCE: 'dist/'
+      #     TARGET: '/Users/hw/Desktop/github/SummerProd/app/web/templates/'
+      #     SCRIPT_AFTER: |
+      #       docker cp /Users/hw/Desktop/github/SummerProd/app/web/templates/ summerprod_nginx_1:/home/app/summer/web
+      #       docker cp /Users/hw/Desktop/github/SummerProd/app/web/templates/ summerprod_summer_1:/home/app/summer/web
+      #       docker restart summerprod_nginx_1
+      #       docker restart summerprod_summer_1
