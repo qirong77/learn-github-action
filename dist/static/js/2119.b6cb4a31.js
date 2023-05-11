@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkv3"]=self["webpackChunkv3"]||[]).push([[2119],{92119:function(e,u,n){n.r(u),n.d(u,{default:function(){return i}});var s=n(66252);function t(e,u,n,t,c,r){const a=(0,s.up)("a-result");return(0,s.wg)(),(0,s.iD)("div",null,[(0,s.Wm)(a,{status:"success",title:"您已成功注册为供应商!"})])}var c={name:"e-SuccessPage"},r=n(83744);const a=(0,r.Z)(c,[["render",t]]);var i=a}}]);
-//# sourceMappingURL=2119.b6cb4a31.js.map
