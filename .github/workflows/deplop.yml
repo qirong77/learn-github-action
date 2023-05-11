@@ -43,7 +43,7 @@ jobs:
           host: 123.57.13.5
           username: root
           password: camptogoA1
-          source: ./dist
+          source: ./templates
           target: /Users/hw/Desktop/github/SummerProd/app/web/templates/
       - name: Execute commands on remote server
         uses: appleboy/ssh-action@master
@@ -53,7 +53,7 @@ jobs:
           password: camptogoA1
           port: 22
           script: |
-            docker cp /Users/hw/Desktop/github/SummerProd/app/web/templates/dist/ summerprod_nginx_1:/home/app/summer/web
-            docker cp /Users/hw/Desktop/github/SummerProd/app/web/templates/dist/ summerprod_summer_1:/home/app/summer/web
+            docker cp /Users/hw/Desktop/github/SummerProd/app/web/templates/ summerprod_nginx_1:/home/app/summer/web
+            docker cp /Users/hw/Desktop/github/SummerProd/app/web/templates/ summerprod_summer_1:/home/app/summer/web
             docker restart summerprod_nginx_1
             docker restart summerprod_summer_1
