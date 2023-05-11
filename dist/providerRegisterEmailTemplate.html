@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="emailTemplate">
+      <div
+        class="logo-container"
+        style="
+          margin-left: 10px;
+          margin-top: 20px;
+          width: 100%;
+          text-align: left;
+        "
+      >
+        <img
+          class="logo"
+          src="https://www.camptogo.com/media/logo_cn.png"
+          height="40"
+        />
+      </div>
+      <div class="main" style="padding: 10px">
+        <p style="margin-top: 20px; margin-bottom: 20px; font-size: 16px">
+          尊敬的营探用户{{username}}，您好！
+        </p>
+        <p style="margin-top: 20px; margin-bottom: 20px; font-size: 16px">
+          欢迎您加入营探，成为营探服务商！请点击下方链接，创建【服务商工作台】用户名和密码：
+        </p>
+        <a
+          href="{{provider_register_link}}"
+          style="
+            display: block;
+            width: 200px;
+            height: 40px;
+            background-color: #93d500;
+            color: #fffffd;
+            text-align: center;
+            font-size: 17px;
+            line-height: 40px;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 10px;
+            border: none;
+            margin-top: 10px;
+            margin-bottom: 10px;
+          "
+          >点击注册</a
+        >
+        <p style="margin-top: 20px; margin-bottom: 20px; font-size: 16px">
+          如果您已创建【服务商工作台】账户，可点击下方按钮登录：
+        </p>
+        <a
+          href="{{provider_login_url}}"
+          style="
+            display: block;
+            width: 200px;
+            height: 40px;
+            background-color: #93d500;
+            color: #fffffd;
+            text-align: center;
+            font-size: 17px;
+            line-height: 40px;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 10px;
+            border: none;
+            margin-top: 10px;
+            margin-bottom: 10px;
+          "
+          >商户登录</a
+        >
+        <p style="margin-top: 20px; margin-bottom: 20px; font-size: 16px">
+          为便于您操作运行【服务商工作台】，请您下载并仔细查看本邮件附件《营探服务商工作台入驻指引》。
+        </p>
+        <p style="margin-top: 20px; margin-bottom: 20px; font-size: 16px">
+          如有其他功能问题，请详询业务经理，谢谢！
+        </p>
+        <p style="margin-top: 20px; margin-bottom: 20px; font-size: 16px">
+          如果您没有申请注册营探服务商，请忽略这个邮件。
+        </p>
+      </div>
+      <div
+        class="footer"
+        style="
+          margin-top: 30px;
+          color: #ffffff;
+          background-color: #b3b3b3;
+          padding: 5px 15px;
+        "
+      >
+        <p style="margin-top: 20px; margin-bottom: 20px; font-size: 14px">
+          温馨提示：账号出现违规行为或违背平台规则的情形，营探平台有权取消服务商账号的相关权益；您应自觉维护双方协议约定，遵守保密义务。
+        </p>
+        <p style="margin-top: 20px; margin-bottom: 20px; font-size: 14px">
+          Copyright © 2021-2022 Camptogo. All Right Reserved
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  const processDate = (utcDateStr, flag) => {
+    const replace1 = utcDateStr.replace("T", "-");
+    const replace2 = replace1.replace(/:/g, "-");
+    const replace3 = replace2.replace("Z", "-");
+    const dateArr = replace3.split("-");
+    for (const index in dateArr) {
+      if (
+        dateArr[index] === "年" ||
+        dateArr[index] === "月" ||
+        dateArr[index] === "日" ||
+        dateArr[index] === "NaN"
+      ) {
+        dateArr[index] = "-1";
+      }
+    }
+    if (flag === 1) {
+      return dateArr.slice(0, 5);
+    } else if (flag === 2) {
+      return dateArr.slice(0, 3);
+    } else {
+      return dateArr.slice(3, 5);
+    }
+  };
+  const rrfff = processDate("2021-月-日TNaN:12:00Z", 1);
+  console.log(rrfff);
+  const rrfff2 = processDate("2021-月-日TNaN:12:00Z", 2);
+  console.log(rrfff2);
+  const rrfff3 = processDate("2021-月-日TNaN:12:00Z", 3);
+  console.log(rrfff3);
+</script>
