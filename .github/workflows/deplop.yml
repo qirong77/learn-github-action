@@ -44,7 +44,7 @@ jobs:
           username: root
           password: camptogoA1
           source: ./dist/
-          target: /Users/hw/Desktop/github/SummerProd/app/web/templates
+          target: /Users/hw/Desktop/github/SummerProd/app/web/templates/
       - name: Execute commands on remote server
         uses: appleboy/ssh-action@master
         with:
